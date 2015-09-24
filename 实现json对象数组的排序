@@ -1,13 +1,4 @@
 //实现json对象数组的排序
-<!DOCTYPE html>
-<!-- saved from url=(0021)http://go.jcw168.com/ -->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>增删改查</title>
-<style media="screen"></style>
-<meta http-equiv="X-UA-Compatible" content="IE=7, IE=9">
-<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
 //$(selector).each()函数循环遍历选中的子元素
 //$.each()函数循环遍历任何集合，如数组、对象
@@ -91,6 +82,5 @@ $(function(){
 	})
 })
 </script>
-</body>
-</html>
+
 

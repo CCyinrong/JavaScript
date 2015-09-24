@@ -1,0 +1,28 @@
+//$(selector).each()函数循环遍历选中的子元素
+//$.each()函数循环遍历任何集合，如数组、对象
+$(document).ready(function(){
+	/*
+	var arr=["张三","李四","Linda","Tom","Bob"],
+	obj={
+		name:"张三",
+		age:21,
+		gender:"man",
+		country:"china",
+		city:"beijing"
+	};
+	$.each(arr,function(i,val){
+		$("#arr").append("数组元素"+val+"</br>");
+		return (val!="Tom");
+	})
+	$.each(obj,function(i,val){
+		$("#obj").append(i+"-"+val+"</br>");
+	})
+	var array=$("ul").children("span");
+	for(i=0;i<array.length;i++){
+		console.log(array[i]);
+	}
+	<div id="arr"></div>
+	<div id="obj"></div>
+	*/
+})
+</script>

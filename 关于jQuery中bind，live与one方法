@@ -1,0 +1,6 @@
+1、.bind(eventType,[ evnetData], Handler(eventObject))
+//bind( )方法用于将一个处理程序附加到每个匹配元素的事件上并返回jQuery对象。
+2、.live(eventType,[eventData],handler）
+//live( )方法将一个事件处理程序附加到与当前选择器匹配的所有元素（包含现有的或将来添加的）的指定事件上并返回jQuery对象。
+3、.one(eventType,[eventData],handler(eventObject))
+//.one()方法将事件处理程序附加到匹配元素的指定事件并返回jQuery对象。所附加的事件处理程序最多只能执行一次。

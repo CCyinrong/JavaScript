@@ -1,0 +1,31 @@
+1、用数组长度截取数组
+var arr1=arr2=[1,2,3];
+arr1=[];
+console.log(arr1);//输出结果为[]
+console.log(arr2);//输出结果为[1,2,3]
+var arr1=arr2=[1,2,3];
+arr1.length=0;
+console.log(arr1);//输出结为[]
+console.log(arr2);//输出结果为[]
+2、用push来合并数组(这里arr2相当于一个参数)
+var arr1=[1,2,3],arr2=[4,5,6];
+Array.prototype.push.apply(arr1,arr2);
+console.log(arr1);//输出结果为[1,2,3,4,5,6]
+var arr3=arr1.concat(arr2);//传统用concat方法合并两个数组
+3、特征检测
+if(window.opera){
+    console.log("OPERA");
+}else{
+    console.log("NOT OPERA");
+}//用来检查浏览器是否支持特定的属性或方法，以便能够支持跨浏览器兼容性。缺点：效率不高，在浏览器里初始化资源
+更好的方法：检查密钥是否在某一个对象里
+if("opera" in window){
+    console.log("OPERA");
+}else{
+    console.log("NOT OPERA");
+}
+4、检查某一个对象是不是数组
+var obj=[];
+Object.prototype.toString.call(obj)=="[object Array]";//返回true
+在ECMAScript 5中可用Array.isArray(obj)来检查
+注：typeof可以返回数字、布尔值、字符串、对象、函数和未定义的对象。（实际上没有数组）

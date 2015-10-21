@@ -1,0 +1,59 @@
+事件委托：事件就是onclick，onmouseover，onmouseout，等就是事件，委托呢，就是让别人来做，
+          这个事件本来是加在某些元素上的，
+          然而你却加到别人身上来做，完成这个事件。
+原理：利用冒泡的原理，把事件加到父级上，触发执行效果。（有很多个li用for循环的话就比较影响性能）
+作用：1、可以提高性能
+2、对于后面用js新增的元素也能绑定事件
+for (i = 0; i < aLi.length; i++)
+		{
+			//li鼠标划过样式
+			EventUtil.addHandler(aLi[i], "mouseover", function (event)
+			{
+				this.className = "hover";
+				oTmp = get.byClass("times", this)[0];
+				var aA = get.byTagName("a", oTmp);
+				if (!aA.length)
+				{
+					var oA = document.createElement("a");					
+					oA.innerHTML = "删除";
+					oA.className = "del";
+					oA.href = "javascript:;";
+					oTmp.appendChild(oA)
+				}
+				else
+				{
+					aA[0].style.display = "block";
+				}
+			});
+
+			//li鼠标离开样式
+			EventUtil.addHandler(aLi[i], "mouseout", function ()
+			{
+				this.className = "";
+				var oA = get.byTagName("a", get.byClass("times", this)[0])[0];
+				oA.style.display = "none"	
+			})
+		}
+		
+可用事件委托：
+oUl.on('mouseover','li',function(){
+		$(this).addClass("hover");
+		oTmp = $(this).find(".times");
+		var aA = $(oTmp).find("a");
+		if (!aA.length){
+			var oA = document.createElement("a");					
+			oA.innerHTML = "删除";
+			$(oA).addClass("del");
+			$(oA).attr("href","javascript:;");
+			oTmp.append(oA);
+		}
+		else{
+			$(aA).show();
+		}
+	});
+	oUl.on('mouseout','li',function(){
+		$(this).removeClass("hover");
+		oTmp = $(this).find(".times");
+		var oA = $(oTmp).find("a");
+		$(oA).hide();
+	})		

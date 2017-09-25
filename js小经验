@@ -29,3 +29,13 @@ var obj=[];
 Object.prototype.toString.call(obj)=="[object Array]";//返回true
 在ECMAScript 5中可用Array.isArray(obj)来检查
 注：typeof可以返回数字、布尔值、字符串、对象、函数和未定义的对象。（实际上没有数组）
+5、从一组颜色中随机获取颜色
+var colorList = ["#FFFF99","#B5FF91","#94DBFF","#FFBAFF","#FFBD9D","#C7A3ED","#CC9898","#8AC007","#CCC007","#FFAD5C"];
+
+var bgColor = getColorByRandom(colorList);
+function getColorByRandom(colorList){
+    var colorIndex = Math.floor(Math.random()*colorList.length);
+    var color = colorList[colorIndex];
+    colorList.splice(colorIndex,1);
+    return color;
+}
